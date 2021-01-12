@@ -2,11 +2,21 @@ package com.amandamiranda.cursomc.domain;
 
 import java.io.Serializable;
 
-// Serializable, indica que os objetos dessa classe poderão ser convertidos para uma sequencia de bytes. Para que os objetos possam
-// ser gravados em arquivos, para trafegar em rede e assim por diante...	
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+
+@Entity
 public class Categoria implements Serializable{ 
+	// Serializable, indica que os objetos dessa classe poderão ser convertidos para uma sequencia de bytes. Para que os objetos possam
+	// ser gravados em arquivos, para trafegar em rede e assim por diante...	
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Definindo a estratégia de geração automática dos ids
     private Integer id;
 	private String nome;
 	
